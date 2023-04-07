@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Level 2
   m_EditorClassIdentifier: 
   Name: 
-  Image: {fileID: 21300000, guid: c6d8659f7b386c144848ee588c828d20, type: 3}
+  Image: {fileID: 21300000, guid: 3a27303141e53d4448e0a3b4dc3bca31, type: 3}
   Caption: 

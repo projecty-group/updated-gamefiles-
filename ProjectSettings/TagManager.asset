@@ -19,6 +19,8 @@ TagManager:
   - CoinExplosionFX
   - Left
   - Puzzle
+  - BoardWalk
+  - Trash
   layers:
   - Default
   - TransparentFX

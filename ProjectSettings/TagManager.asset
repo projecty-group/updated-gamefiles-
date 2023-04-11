@@ -19,6 +19,7 @@ TagManager:
   - CoinExplosionFX
   - Left
   - Puzzle
+  - Sign
   layers:
   - Default
   - TransparentFX

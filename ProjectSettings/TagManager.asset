@@ -21,6 +21,7 @@ TagManager:
   - Puzzle
   - BoardWalk
   - Trash
+  - Sign
   layers:
   - Default
   - TransparentFX

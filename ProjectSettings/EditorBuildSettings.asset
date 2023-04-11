@@ -17,13 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MaracasBeach.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/Scenes/WelcomeScreen.unity
-    guid: d07a0860b7347584396156358d01b0b7
+  - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: 6173b51eded1d9c45a0ac86919cf28ba
+  - enabled: 1
+    path: Assets/Scenes/FishingGame.unity
+    guid: 9971b8f05c9b0064db2222c086bdf1bf
   m_configObjects: {}

@@ -19,9 +19,15 @@ TagManager:
   - CoinExplosionFX
   - Left
   - Puzzle
+<<<<<<< Updated upstream
   - BoardWalk
   - Trash
   - Sign
+=======
+  - Mouselook
+  - MainCamera1
+  - MainCamera2
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX

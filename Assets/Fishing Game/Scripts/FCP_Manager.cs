@@ -324,13 +324,13 @@ public class FCP_Manager : MonoBehaviour
 
         popupWindow.SetActive(false);
     }
-
+    /*
     // This is used to go back to the main map, this is a button
     public void UI_GoBackMap()
     {
         //SceneManager.LoadScene("TitleScreen");
         SceneManager.LoadScene("Map");
-    }
+    }*/
 
     // This is used to go back to the main menu, this is a button
     public void UI_GoBackMenu()

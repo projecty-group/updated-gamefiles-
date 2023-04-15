@@ -44,6 +44,8 @@ public class TriggerNotifier : MonoBehaviour
         {
             if (gameObject.tag == "BoardWalk"){
                 SceneManager.LoadScene("TitleScreen");
+             
+
             }
             if (gameObject.tag == "Sign"){
                 SceneManager.LoadScene("Menu");
@@ -51,6 +53,7 @@ public class TriggerNotifier : MonoBehaviour
             
         }
     }
+
    
    /*
 

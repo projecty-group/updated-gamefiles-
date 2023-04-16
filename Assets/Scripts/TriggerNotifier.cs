@@ -6,14 +6,10 @@ using TMPro;
 public class TriggerNotifier : MonoBehaviour
 {
     public KeyCode startKey;
-    //public string miniGameSceneName;
-    //public TextMeshProUGUI messageText;
     public GameObject PlayGamePopUp;
-    // Reference to the player GameObject
-    public GameObject player;
-    // Reference to the main camera GameObject
-    public GameObject mainCamera;
-    //public GameObject objectToCheck;
+    public GameObject player; // Reference to the player GameObject
+    public GameObject mainCamera; // Reference to the main camera GameObject
+   
 
 
     private bool canStartMiniGame = false;
@@ -43,9 +39,11 @@ public class TriggerNotifier : MonoBehaviour
         if (canStartMiniGame && Input.GetKeyDown(startKey))
         {
             if (gameObject.tag == "BoardWalk"){
+                PlayGamePopUp.SetActive(false);
                 SceneManager.LoadScene("TitleScreen");
             }
             if (gameObject.tag == "Sign"){
+                PlayGamePopUp.SetActive(false);
                 SceneManager.LoadScene("Menu");
             }
             

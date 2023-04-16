@@ -16,6 +16,7 @@ public class FCP_Manager : MonoBehaviour
     TimeSpan timePlaying; //allows for a readable format of time
     public bool gamePlaying {get; private set; } //true when the player is playing the game and false when the game has ended.
     public float timeLimit = 180f; // Set the time limit to 3 minutes (180 seconds)
+    public AudioSource backgroundMusic; //reference to the background music of the game.
     
     [HideInInspector]
     public FCP_Player fcpPlayer;
@@ -24,8 +25,8 @@ public class FCP_Manager : MonoBehaviour
     public int maxFishCount;                                       //the total amount of fishes we are allowed to catch.
 
     [Header("SFX Settings")]
-    public AudioClip waterHitSFX;
-    public AudioClip reelingInSFX;
+    public AudioClip waterHitSFX;                                       //sound when the lure hits the water
+    public AudioClip reelingInSFX;                                      //sound the fishing line makes when reeled in.
 
     [Header("Fisher Settings")]   
     public float reelSpeed = 8.0f;                                      // The speed at which we reel 
@@ -43,8 +44,8 @@ public class FCP_Manager : MonoBehaviour
     public Transform fishingRod;                                        // Our fishing rod. This can be extended to be something we unlock.
 
     [Header("UI Related")]
-    public Text fishCountText;
-    //public Text areaName;
+    public Text fishCountText;                                          //the text on the screen that represents the amount of fishes caught
+    
 
     [Header("UI Popup")]
     public GameObject uiPopupFishLost;                                  //This is the window that pops up when a fish is lost
@@ -99,27 +100,17 @@ public class FCP_Manager : MonoBehaviour
 
         
         maxFishCount = UnityEngine.Random.Range(1, 14); //generates a random number for the number of fishes to be caught.
-        fishCounter.text = "Catch: " + maxFishCount.ToString() + " fish";
+        fishCounter.text = "Catch: " + maxFishCount.ToString() + " fish"; //sets the random number of fishes the player must catch
         fishCount = 0;
         fishCountText.text = fishCount.ToString();  //initialize the number of fishes caught to zero.
-        PlayerPrefs.SetInt("PlayerCoinCount", fishCount);
+        PlayerPrefs.SetInt("PlayerCoinCount", fishCount); //sets the value of the amount of fishes caught to zero on the user interface
         PlayerPrefs.Save();
         gamePlaying = false;
         timeCounter.text = "Time: 00:00";
 
         BeginGame();
 
-        /*
-        // Look up the area name text, this comes from PlayerPrefs. If not found, default to "Lake"
-        if(PlayerPrefs.HasKey("FCP_CurrentArea"))
-        {
-            areaName.text = PlayerPrefs.GetString("FCP_CurrentArea");
-        }
-        else
-        {
-            // Default name if we cannot find one saved
-            areaName.text = "Lake";
-        } */
+    
     }
 
     private void BeginGame(){
@@ -135,7 +126,7 @@ public class FCP_Manager : MonoBehaviour
         if(gamePlaying){
 
         elapsedTime = Time.time - startTime; //amount of time that has passed since the game started
-        timePlaying = TimeSpan.FromSeconds(elapsedTime); //converts the timspan variable in a time format for the player to understand
+        timePlaying = TimeSpan.FromSeconds(elapsedTime); //converts the timespan variable in a time format for the player to understand
 
         string timePlayingStr = "Time: " + timePlaying.ToString("mm':'ss"); //creates a string with the time format
         timeCounter.text = timePlayingStr; //sets the timetext object to the timer to start the counting
@@ -144,9 +135,10 @@ public class FCP_Manager : MonoBehaviour
         fishCount = PlayerPrefs.GetInt("PlayerCoinCount");
         fishCountText.text = fishCount.ToString();
 
-        if(Time.time >= timeLimit){
+        if(elapsedTime >= timeLimit){ //checks to see if the time goes over 3 minutes.
 
-              GameOver();
+              
+              GameOver(); //ends the game when the time goes over 3 minutes
         }
 
         // If we do not have a fish, disable the battle popup
@@ -282,6 +274,7 @@ public class FCP_Manager : MonoBehaviour
     private void EndGame(){ //screen that shows once the player catches the required number of fishes.
 
         gamePlaying = false;
+        backgroundMusic.Stop();
         Invoke("ShowGameOverScreen", 1.25f);
 
     }
@@ -289,6 +282,7 @@ public class FCP_Manager : MonoBehaviour
     private void GameOver(){ //screen that shows when the time runs out before the player catches the given amount of fishes.
  
         gamePlaying = false;
+        backgroundMusic.Stop();
         Invoke("ShowEndGameScreen", 1.25f);
 
     }

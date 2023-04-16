@@ -41,6 +41,8 @@ public class TriggerNotifier : MonoBehaviour
             if (gameObject.tag == "BoardWalk"){
                 PlayGamePopUp.SetActive(false);
                 SceneManager.LoadScene("TitleScreen");
+             
+
             }
             if (gameObject.tag == "Sign"){
                 PlayGamePopUp.SetActive(false);
@@ -49,6 +51,7 @@ public class TriggerNotifier : MonoBehaviour
             
         }
     }
+
    
    /*
 

@@ -12,16 +12,18 @@ public class FCP_Manager : MonoBehaviour
     private float startTime, elapsedTime;
     public TextMeshProUGUI timeCounter;  //reference to timecounter text gameobject
     public TextMeshProUGUI fishCounter;  //reference to fishcount text gameobject
-    public GameObject hudContainer, gameOverPanel, endGamePanel;
+    public GameObject hudContainer, gameOverPanel, endGamePanel, pausePanel;
     TimeSpan timePlaying; //allows for a readable format of time
     public bool gamePlaying {get; private set; } //true when the player is playing the game and false when the game has ended.
     public float timeLimit = 180f; // Set the time limit to 3 minutes (180 seconds)
     public AudioSource backgroundMusic; //reference to the background music of the game.
+    public bool isPaused = false;     //boolean used to pause the game.
+
     
     [HideInInspector]
-    public FCP_Player fcpPlayer;
+    public FCP_Player fcpPlayer;                                   //reference to the player object
 
-    public int fishCount = 0;                                           // The amount of fish coins we have
+    public int fishCount = 0;                                      // The amount of fish coins we caught
     public int maxFishCount;                                       //the total amount of fishes we are allowed to catch.
 
     [Header("SFX Settings")]
@@ -106,7 +108,7 @@ public class FCP_Manager : MonoBehaviour
         PlayerPrefs.SetInt("PlayerCoinCount", fishCount); //sets the value of the amount of fishes caught to zero on the user interface
         PlayerPrefs.Save();
         gamePlaying = false;
-        timeCounter.text = "Time: 00:00";
+        timeCounter.text = "Time: 00:00";           //initializes the time to zero for the player to see on the UI
 
         BeginGame();
 
@@ -135,7 +137,7 @@ public class FCP_Manager : MonoBehaviour
         fishCount = PlayerPrefs.GetInt("PlayerCoinCount");
         fishCountText.text = fishCount.ToString();
 
-        if(elapsedTime >= timeLimit){ //checks to see if the time goes over 3 minutes.
+        if(elapsedTime >= timeLimit){ //checks to see if the timer goes over 3 minutes.
 
               
               GameOver(); //ends the game when the time goes over 3 minutes
@@ -146,6 +148,33 @@ public class FCP_Manager : MonoBehaviour
             uiFishBattlePopupWindow.SetActive(false);
 
         }
+
+         if (Input.GetKeyDown(KeyCode.Space))   //if the spacebar is pressed, the game is paused
+        {
+            if (isPaused)
+            {
+                ResumeGame();
+            }
+            else
+            {
+                PauseGame();
+            }
+        }
+    }
+
+    void PauseGame()
+    {
+        isPaused = true;
+        pausePanel.SetActive(true); // Show the pause panel
+        Time.timeScale = 0f; // Set the time scale to 0 to pause the game
+        
+    }
+
+    void ResumeGame()
+    {
+        isPaused = false;
+        pausePanel.SetActive(false); //Hide the pause panel
+        Time.timeScale = 1f; // Set the time scale back to 1 to resume the game
     }
 
     public void CaughtFish(FCP_Fish fish)

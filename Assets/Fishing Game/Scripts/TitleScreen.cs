@@ -12,7 +12,7 @@ public class TitleScreen : MonoBehaviour
 
      void QuitGame(){
 
-        //SceneManager.LoadScene("MaracasBeach"); //Goes to the Maracas Beach terrain when the player presses the back button
-        SceneManager.UnloadSceneAsync("TitleScreen");
+        SceneManager.LoadScene("MaracasBeach"); //Goes to the Maracas Beach terrain when the player presses the back button
+       
     }
 }

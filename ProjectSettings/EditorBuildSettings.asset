@@ -29,4 +29,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/JigsawPuzzlesCollection/Menu.unity
     guid: d1590adffbb70ab49b4e480d300285c1
+  - enabled: 1
+    path: Assets/Scenes/login.unity
+    guid: 2d303487d44169642af5a0990afcf7a2
+  - enabled: 1
+    path: Assets/Scenes/Register.unity
+    guid: be1ac515606a5eb48acd91d5934f0619
   m_configObjects: {}

@@ -8,5 +8,10 @@ public class MapScript : MonoBehaviour
         SceneManager.LoadScene(sceneName);
    }
 
+   public void Quit()
+    {
+        Application.Quit(); // Exit the entire game application
+    }
+
   
 }

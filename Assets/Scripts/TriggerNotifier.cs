@@ -53,25 +53,5 @@ public class TriggerNotifier : MonoBehaviour
     }
 
    
-   /*
-
-    // When a new scene is loaded, update the references to the player and main camera
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        player = GameObject.FindGameObjectWithTag("Player");
-        mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
-    }
-
-    // Subscribe to the sceneLoaded event when the script is enabled
-    private void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    // Unsubscribe from the sceneLoaded event when the script is disabled
-    private void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-    */
+ 
 }

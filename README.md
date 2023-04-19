@@ -40,3 +40,18 @@ Can navigate through the files using the Project Files and Hierarchy.
 
 Can test game by using the Play Button.
 ![play](https://user-images.githubusercontent.com/60389897/229861282-c9259e4a-06a3-4878-9ad1-1409cc6f58dc.png)
+
+# To Open The Running Game Application
+After you clone the Repository.
+- Go to the Location of the Cloned Files
+![Cloned Repo Folder](https://user-images.githubusercontent.com/60389897/232980353-12db7c1d-51b3-4d7d-a2ae-3c492eaa7b80.PNG)
+
+- The Build of the Game Application is under the 'Game Application' Folder.
+![Highlighted Folder](https://user-images.githubusercontent.com/60389897/232980683-f81c16f5-4016-4501-abd5-4018b1ee0b65.PNG)
+
+- Run the MyProject(1).exe to Play Game.
+![GameApp](https://user-images.githubusercontent.com/60389897/232981315-f6d60450-cb1c-4b5b-8f18-55933c47ebd2.PNG)
+
+Please Note:
+- You can only close the application in Lobby Scene.
+- To close the Game from anywhere else, press 'Windows/Home' button, and drag your mouse to where the application is located on the Task Bar and exit from there.

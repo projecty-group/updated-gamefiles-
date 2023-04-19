@@ -1,4 +1,7 @@
-﻿using System.Linq;
+﻿//This code file was bought and mostly remained the same.
+//With the exception of three Functions, which were re written.
+
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -30,11 +33,6 @@ namespace JigsawPuzzlesCollection.Scripts
         public Toggle backgroundToggle;
         public Toggle[] boardsToggles;
 
-        [Header("Settings/Sound")]
-        public Toggle musicToggle;
-        public Toggle soundsToggle;
-        public Slider volumeSlider;
-
         public void Awake()
         {
             var gridParent = collectionsPanel.GetComponentInChildren<GridLayoutGroup>();
@@ -50,13 +48,6 @@ namespace JigsawPuzzlesCollection.Scripts
             var showBackground = GameplayManager.Instance.ShowBackground();
             backgroundToggle.isOn = showBackground;
 
-            //var musicMute = SoundManager.Instance.IsMusicMuted();
-            //var soundsMute = SoundManager.Instance.IsMuted();
-            //var volume = SoundManager.Instance.GetVolume();
-            //musicToggle.isOn = !musicMute;
-            //soundsToggle.isOn = !soundsMute;
-            //volumeSlider.value = volume;
-
             var selectedBoardIndex = GameplayManager.Instance.SelectedBoard();
             SelectBoard(selectedBoardIndex);
         }
@@ -67,6 +58,7 @@ namespace JigsawPuzzlesCollection.Scripts
             settingsButton.interactable = !settingsButton.interactable;
         }
 
+        //This function was re witten by Aalimah.
         public void DisplayCollection(Collection collection)
         {
             var gridParent = levelsPanel.GetComponentInChildren<GridLayoutGroup>();
@@ -93,6 +85,7 @@ namespace JigsawPuzzlesCollection.Scripts
             levelsPanel.SetActive(false);
         }
 
+        //This function was re witten by Aalimah.
         public void RefreshSelectedCollection()
         {
             var collection = LevelSelectorScript.Instance.SelectedCollection;
@@ -104,6 +97,7 @@ namespace JigsawPuzzlesCollection.Scripts
             DisplayCollection(collection);
         }
 
+        //This function was re witten by Aalimah.
         public void RewardAdReady()
         {
             var collections = collectionsPanel.GetComponentsInChildren<CollectionScript>();

@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿//This Code File was written by Aalimah.
+
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace JigsawPuzzlesCollection.Scripts

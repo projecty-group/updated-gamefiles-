@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿//This code file was bought and remained as its original format.
+
+using UnityEngine;
 
 namespace JigsawPuzzlesCollection.Scripts
 {

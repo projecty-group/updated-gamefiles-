@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿//This code file was bought and remained as its original format.
+
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering;
 

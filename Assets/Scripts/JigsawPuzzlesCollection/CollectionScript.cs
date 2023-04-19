@@ -1,4 +1,5 @@
-﻿//using JigsawPuzzlesCollection.Scripts.Ads;
+﻿//This Code File was written by Aalimah.
+
 using UnityEngine;
 using UnityEngine.Advertisements;
 using UnityEngine.UI;
